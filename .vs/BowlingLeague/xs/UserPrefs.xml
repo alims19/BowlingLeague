@@ -1,12 +1,25 @@
 ﻿<Properties StartupConfiguration="{C29B1BE4-26AB-4F4B-A7B6-5F719EC23E4E}|Default">
   <MonoDevelop.Ide.ItemProperties.BowlingLeague PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomeController.cs">
+    <Files>
+      <File FileName="Controllers/HomeController.cs" Line="22" Column="10" />
+      <File FileName="Views/Home/Index.cshtml" Line="12" Column="45" />
+      <File FileName="Models/IBowlersRepository.cs" Line="10" Column="2" />
+      <File FileName="Models/EFBowlersRepository.cs" Line="17" Column="6" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="BowlingLeague" expanded="True">
             <Node name="BowlingLeague" expanded="True">
-              <Node name="Controllers" expanded="True" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="HomeController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
