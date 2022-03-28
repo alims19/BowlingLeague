@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "New Bowler";
+}
+
+@model BowlingLeague.Models.Bowler
+
+<head>
+    <!-- Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+    <!-- SimpleLightbox plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="~/css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header class="masthead">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <fieldset>
+                        <form method="post">
+                            <div asp-validation-summary="All"></div>
+
+                            <section class="vh-100" style="background-color: transparent;">
+                                <div class="container py-5 h-100">
+                                    <div class="row d-flex justify-content-center align-items-center h-100">
+                                        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                                            <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                                                <div class="card-body p-5 text-center">
+
+                                                    <h5 class="display-4 lh-1 mb-4" style="font-size:30px;">Enter Bowler Details</h5>
+
+                                                    <label asp-for="BowlerFirstName">First Name</label><br />
+                                                    <input asp-for="BowlerFirstName" />
+                                                    <br /><br />
+
+                                                    <label asp-for="BowlerLastName">Last Name</label><br />
+                                                    <input asp-for="BowlerLastName" />
+                                                    <br /><br />
+
+                                                    <label asp-for="BowlerMiddleInit">Middle Initial</label><br />
+                                                    <input asp-for="BowlerMiddleInit" />
+                                                    <br /><br />
+
+                                                    <label asp-for="BowlerAddress">Street Address</label><br />
+                                                    <input asp-for="BowlerAddress" />
+                                                    <br /><br />
+
+                                                    <label asp-for="BowlerCity">City</label><br />
+                                                    <input asp-for="BowlerCity" />
+                                                    <br /><br />
+
+                                                    <label asp-for="BowlerState">State</label><br />
+                                                    <input asp-for="BowlerState" />
+                                                    <br /><br />
+
+                                                    <label asp-for="BowlerZip">Zip</label><br />
+                                                    <input asp-for="BowlerZip" />
+                                                    <br /><br />
+
+                                                    <label asp-for="BowlerPhoneNumber">Phone Number</label><br />
+                                                    <input asp-for="BowlerPhoneNumber" />
+                                                    <br /><br />
+
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                    <br /><br />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+
+<!-- Footer-->
+<footer class="bg-light py-5">
+    <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - Bowling League</div></div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- SimpleLightbox plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>

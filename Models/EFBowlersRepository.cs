@@ -8,11 +8,29 @@ namespace BowlingLeague.Models
         private BowlingLeagueDbContext _context { get; set; }
 
         //Constructor
-        public EFBowlersRepository(BowlingLeagueDbContext temp)
+        public EFBowlersRepository(BowlingLeagueDbContext bl)
         {
-            _context = temp;
+            _context = bl;
         }
 
         public IQueryable<Bowler> Bowlers => _context.Bowlers;
+
+        public void AddBowler(Bowler b)
+        {
+            _context.Add(b);
+            _context.SaveChanges();
+        }
+
+        public void DeleteBowler(Bowler b)
+        {
+            _context.Remove(b);
+            _context.SaveChanges();
+        }
+
+        public void SaveBowler(Bowler b)
+        {
+            _context.Update(b);
+            _context.SaveChanges();
+        }
     }
 }

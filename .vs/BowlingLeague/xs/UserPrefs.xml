@@ -1,24 +1,36 @@
 ﻿<Properties StartupConfiguration="{C29B1BE4-26AB-4F4B-A7B6-5F719EC23E4E}|Default">
   <MonoDevelop.Ide.ItemProperties.BowlingLeague PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/AddBowler.cshtml">
     <Files>
-      <File FileName="Controllers/HomeController.cs" Line="22" Column="10" />
-      <File FileName="Views/Home/Index.cshtml" Line="12" Column="45" />
-      <File FileName="Models/IBowlersRepository.cs" Line="10" Column="2" />
-      <File FileName="Models/EFBowlersRepository.cs" Line="17" Column="6" />
+      <File FileName="Controllers/HomeController.cs" Line="108" Column="1" />
+      <File FileName="Views/Home/Index.cshtml" Line="36" Column="15" />
+      <File FileName="Views/Home/AddBowler.cshtml" Line="16" Column="38" />
+      <File FileName="Models/IBowlersRepository.cs" Line="14" Column="2" />
+      <File FileName="Models/EFBowlersRepository.cs" Line="33" Column="30" />
+      <File FileName="Models/Bowler.cs" Line="12" Column="30" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="8" Column="25" />
+      <File FileName="Views/Home/Delete.cshtml" Line="13" Column="53" />
+      <File FileName="Views/Home/ViewBowlers.cshtml" Line="20" Column="104" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="BowlingLeague" expanded="True">
             <Node name="BowlingLeague" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="HomeController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
+                <Node name="Home" expanded="True">
+                  <Node name="AddBowler.cshtml" selected="True" />
+                </Node>
                 <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+                <Node name="js" expanded="True" />
+                <Node name="lib" expanded="True">
+                  <Node name="img" expanded="True" />
+                </Node>
               </Node>
             </Node>
           </Node>

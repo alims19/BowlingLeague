@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "All Bowlers";
+}
+
+@model List<Bowler>
+
+<head>
+    <!-- Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+    <!-- SimpleLightbox plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="~/css/styles.css" rel="stylesheet" />
+</head>
+
+@*<h5 class="display-4 lh-1 mb-4" style="font-size:30px;">Bowlers</h5>*@
+<a class="btn btn-outline-info" asp-controller="Home" asp-action="Teams">View All Teams</a><br /><br />
+
+<table class="table table-bordered table-striped table-hover table-light">
+
+    <thead class="font-weight-bold">
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Middle Initial</td>
+            <td>Address</td>
+            <td>City</td>
+            <td>State</td>
+            <td>Zip</td>
+            <td>Phone Number</td>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var b in Model)
+        {
+            <tr>
+                <td>@b.BowlerFirstName</td>
+                <td>@b.BowlerLastName</td>
+                <td>@b.BowlerMiddleInit</td>
+                <td>@b.BowlerAddress</td>
+                <td>@b.BowlerCity</td>
+                <td>@b.BowlerState</td>
+                <td>@b.BowlerZip</td>
+                <td>@b.BowlerPhoneNumber</td>
+
+                <td><a class="btn btn-outline-info" asp-controller="Home" asp-action="Edit" asp-route-appid="@b.BowlerID">Edit</a></td>
+                <td><a class="btn btn-outline-danger" asp-controller="Home" asp-action="Delete" asp-route-appid="@b.BowlerID">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>

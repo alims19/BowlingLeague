@@ -54,3 +54,7 @@
 /Users/alismith/Desktop/BowlingLeague/obj/Debug/netcoreapp3.1/BowlingLeague.dll
 /Users/alismith/Desktop/BowlingLeague/obj/Debug/netcoreapp3.1/BowlingLeague.pdb
 /Users/alismith/Desktop/BowlingLeague/obj/Debug/netcoreapp3.1/BowlingLeague.genruntimeconfig.cache
+/Users/alismith/Desktop/BowlingLeague/obj/Debug/netcoreapp3.1/Razor/Views/Home/AddBowler.cshtml.g.cs
+/Users/alismith/Desktop/BowlingLeague/obj/Debug/netcoreapp3.1/Razor/Views/Home/Delete.cshtml.g.cs
+/Users/alismith/Desktop/BowlingLeague/obj/Debug/netcoreapp3.1/Razor/Views/Home/ViewBowlers.cshtml.g.cs
+/Users/alismith/Desktop/BowlingLeague/obj/Debug/netcoreapp3.1/Razor/Views/Home/Teams.cshtml.g.cs
