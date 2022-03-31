@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BowlingLeague.Models;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace BowlingLeague.Controllers
@@ -19,21 +20,14 @@ namespace BowlingLeague.Controllers
             _repo = temp;
         }
 
-        //HOME PAGE
+        //VIEW BOWLERS
         public IActionResult Index()
         {
-            return View();
-        }
+            ViewBag.Teams = _repo.Teams.ToList();
 
-        //VIEW BOWLERS
-        [HttpGet]
-        public IActionResult ViewBowlers()
-        {
-            //List<Team> teams = _repo.Teams.ToList();
+            ViewBag.AllTeams = "";
 
             var bowlers = _repo.Bowlers
-                //.FromSqlRaw("Select * from recipes where recipetitle like 'a%'")
-                .OrderBy(x => x.BowlerFirstName)
                 .ToList();
 
             return View(bowlers);
@@ -41,51 +35,55 @@ namespace BowlingLeague.Controllers
 
         //VIEW TEAMS
         [HttpGet]
-        public IActionResult Teams()
+        public IActionResult Teams(int teamid)
         {
-            //List<Team> teams = _repo.Teams.ToList();
+            ViewBag.Teams = _repo.Teams.ToList();
 
             var teams = _repo.Bowlers
-                //.FromSqlRaw("Select * from recipes where recipetitle like 'a%'")
-                .OrderBy(x => x.BowlerFirstName)
+                .Where(x => x.TeamID == teamid)
                 .ToList();
 
-            return View(teams);
+
+            ViewBag.AllTeams = _repo.Teams
+                .Where(x => x.TeamID == teamid)
+                .ToList();
+                
+
+            return View("Index", teams);
         }
 
         //ADD BOWLER
         [HttpGet]
         public IActionResult AddBowler()
         {
-            ViewBag.Bowlers = _repo.Bowlers.ToList();
+            ViewBag.Teams = _repo.Teams
+                .ToList();
+
             return View();
         }
 
         [HttpPost]
         public IActionResult AddBowler(Bowler b)
         {
-            _repo.AddBowler(b);
+            if (ModelState.IsValid)
+            {
+                _repo.AddBowler(b);
 
-            return View("Index");
-
-            //if (ModelState.IsValid)
-            //{
-            //    _repo.AddBowler(b);
-
-            //    return View("ViewBowlers");
-            //}
-            //else
-            //{
-            //    ViewBag.Bowlers = _repo.Bowlers.ToList();
-            //    return View();
-            //}
+                return RedirectToAction("Index", b);
+            }
+            else
+            {
+                ViewBag.Teams = _repo.Teams.ToList();
+                return View();
+            }
         }
 
         //EDIT BOWLER
         [HttpGet]
         public IActionResult Edit(int bowlerid)
         {
-            ViewBag.Bowlers = _repo.Bowlers.ToList();
+            ViewBag.Teams = _repo.Teams
+                .ToList();
 
             var bowler = _repo.Bowlers.Single(x => x.BowlerID == bowlerid);
 
@@ -98,7 +96,7 @@ namespace BowlingLeague.Controllers
         {
             _repo.SaveBowler(b);
 
-            return RedirectToAction("ViewBowlers");
+            return RedirectToAction("Index");
         }
 
         //DELETE BOWLER
@@ -117,7 +115,7 @@ namespace BowlingLeague.Controllers
 
             _repo.DeleteBowler(bowler);
 
-            return View("Index");
+            return RedirectToAction("Index");
         }
     }
 }

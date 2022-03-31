@@ -28,6 +28,7 @@ namespace BowlingLeague
             services.AddControllersWithViews();
             services.AddDbContext<BowlingLeagueDbContext>(options =>
             {
+                //options.UseMySql(Configuration.GetConnectionString("BowlingLeagueDbConnection"));
                 options.UseMySql(Configuration["ConnectionStrings:BowlingLeagueDbConnection"]);
             });
 

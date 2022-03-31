@@ -1,2 +1,27 @@
 ﻿@{
+    ViewData["Title"] = "Teams";
 }
+
+
+@*Shows all teams*@
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle fw-normal" type="button" data-toggle="dropdown">
+        Filter by Team
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        @foreach (Team t in ViewBag.Teans)
+        {
+            <li style="padding-left:10px;"><a asp-controller="Home" asp-action="Teams" asp-route-teamid="@t.TeamID">@t.TeamName</a></li>
+        }
+    </ul>
+</div>
+<br />
+
+@*Shows team name*@
+@foreach (Team t in ViewBag.AllTeams)
+{
+    <h2 class="lead fw-normal mb-lg-0" style="font-size:28px; text-align:center">The @t.TeamName</h2>
+}
+
+<br />
